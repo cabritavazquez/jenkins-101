@@ -7,7 +7,7 @@ Pipeline{
     stages{
         stage("init"){
             steps{
-
+                echo "init"
             }
         }
         stage("build dev"){
