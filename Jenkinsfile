@@ -15,7 +15,7 @@ pipeline{
             //     ansiColor("xterm")
             // }
             when{
-                branch "dev"
+                branch "development"
             }
             steps{
                 echo "build your nice project with version ${MY_VERSION_VAR}"
@@ -26,7 +26,7 @@ pipeline{
                 branch "master"
             }
             steps{
-                sh "build your nice project!"
+                echo "build your nice project!"
             }
         }
         stage("push"){
@@ -34,7 +34,7 @@ pipeline{
                 timeout(time: 5, unit: "SECONDS")
             }
             steps{
-                sh "build your nice project!"
+                echo "build your nice project!"
             }
         }
     }
