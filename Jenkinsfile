@@ -11,9 +11,9 @@ pipeline{
             }
         }
         stage("build dev"){
-            options{
-                ansiColor("xterm")
-            }
+            // options{
+            //     ansiColor("xterm")
+            // }
             when{
                 branch "dev"
             }
