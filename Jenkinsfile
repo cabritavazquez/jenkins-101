@@ -1,5 +1,5 @@
 // Declarative Pipeline
-Pipeline{
+pipeline{
     agent any
     environment{
         MY_VERSION_VAR = "1.0.0"
