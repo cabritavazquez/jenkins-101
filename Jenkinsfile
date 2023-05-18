@@ -53,7 +53,7 @@ pipeline{
             steps{
                 sh 'node -v'
                 sh 'ls'
-                sh 'node hola-mundo.js'
+                sh 'node holamundo.js'
             }
         }        
     }
