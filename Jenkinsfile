@@ -39,9 +39,9 @@ pipeline{
             }
         }
         stage("push"){
-            agent{
-                docker { image 'sebasnaa/azagent:1.0' }
-            }
+            // agent{
+            //     docker { image 'sebasnaa/azagent:1.0' }
+            // }
             steps{
                 echo "build your nice project!"
             }
