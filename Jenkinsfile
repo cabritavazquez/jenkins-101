@@ -43,6 +43,14 @@ pipeline{
                 echo "build your nice project!"
             }
         }
+        stage("using credentials"){
+            steps{
+                echo "using credentials for..."
+                withCredentials([usernamePassword(credentials:'server-credentials',username:USER,password:PWD)]){
+                    sh "some script that needs credentials ${USER} ${PWD}"
+                }
+            }
+        }
         stage("executing node"){
             agent{
                 docker { image 'sebasnaa/nodeagent:1.2' }
