@@ -50,6 +50,7 @@ pipeline{
     post {
         success {
             sh 'python3 --version'
+            sh 'python3 helloworld.py'
             // sh './helloworld.py'
         }
     }
