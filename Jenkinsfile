@@ -5,6 +5,9 @@ pipeline{
     environment{
         MY_VERSION_VAR = "1.0.0"
     }
+    parameters {
+        choice(name: 'VERSION', choices: ['1.1.0','1.2.0'],description: 'Version to deploy')
+    }
     stages{
         stage("init"){
             steps{
