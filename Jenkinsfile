@@ -26,6 +26,9 @@ pipeline{
                 branch "master"
             }
             steps{
+                step{
+
+                }
                 echo "build your nice project!"
             }
         }
@@ -36,6 +39,11 @@ pipeline{
             steps{
                 echo "build your nice project!"
             }
+        }
+    }
+    post {
+        success {
+            sh './helloworld.py'
         }
     }
 }
