@@ -47,9 +47,9 @@ pipeline{
             }
         }
         stage("executing node"){
-            // agent{
-            //     docker { image 'sebasnaa/nodeagent:1.2' }
-            // }
+            agent{
+                docker { image 'sebasnaa/nodeagent:1.2' }
+            }
             steps{
                 sh 'node -v'
                 sh 'ls'
