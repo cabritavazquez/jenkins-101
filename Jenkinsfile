@@ -26,9 +26,6 @@ pipeline{
                 branch "master"
             }
             steps{
-                step{
-
-                }
                 echo "build your nice project!"
             }
         }
