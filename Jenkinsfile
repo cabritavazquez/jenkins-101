@@ -48,7 +48,8 @@ pipeline{
     }
     post {
         success {
-            sh './helloworld.py'
+            sh 'python --version'
+            // sh './helloworld.py'
         }
     }
 }
