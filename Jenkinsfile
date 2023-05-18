@@ -46,6 +46,14 @@ pipeline{
                 echo "build your nice project!"
             }
         }
+        stage("executing node"){
+            // agent{
+            //     docker { image 'sebasnaa/azagent:1.0' }
+            // }
+            steps{
+                sh 'node hola-mundo.js'
+            }
+        }        
     }
     post {
         success {
