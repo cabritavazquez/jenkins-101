@@ -39,9 +39,6 @@ pipeline{
             }
         }
         stage("push"){
-            // agent{
-            //     docker { image 'sebasnaa/azagent:1.0' }
-            // }
             steps{
                 echo "build your nice project!"
             }
@@ -52,7 +49,6 @@ pipeline{
             }
             steps{
                 sh 'node -v'
-                sh 'ls'
                 sh 'node holamundo.js'
             }
         }        
@@ -61,7 +57,6 @@ pipeline{
         success {
             sh 'python3 --version'
             sh 'python3 helloworld.py'
-            // sh './helloworld.py'
         }
     }
 }
