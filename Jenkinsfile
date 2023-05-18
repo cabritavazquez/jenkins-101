@@ -1,6 +1,6 @@
 // Declarative Pipeline
 pipeline{
-    agent any
+    agent {label 'python'}
     environment{
         MY_VERSION_VAR = "1.0.0"
     }
