@@ -46,7 +46,7 @@ pipeline{
         stage("using credentials"){
             steps{
                 echo "using credentials for..."
-                withCredentials([usernamePassword(credentials:'server-credentials',username:USER,password:PWD)]){
+                withCredentials([string(credentialsId:'server-user',variable:'USER'),string(credentialsId:'server-pass',variable:'PWD')]){
                     sh "some script that needs credentials ${USER} ${PWD}"
                 }
             }
