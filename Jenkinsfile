@@ -51,6 +51,8 @@ pipeline{
                 docker { image 'sebasnaa/nodeagent:1.2' }
             }
             steps{
+                sh 'node -v'
+                sh 'ls'
                 sh 'node hola-mundo.js'
             }
         }        
