@@ -29,9 +29,17 @@ pipeline{
                 echo "build your nice project!"
             }
         }
-        stage("push"){
+        stage("accept deployment"){
             options{
-                timeout(time: 5, unit: "SECONDS")
+                timeout(time: 2, unit: "MINUTES")
+            }
+            steps{
+                input(message: "Approve deploy?", ok:"Yes")
+            }
+        }
+        stage("push"){
+            agent{
+                label "python"
             }
             steps{
                 echo "build your nice project!"
