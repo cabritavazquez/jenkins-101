@@ -39,9 +39,9 @@ pipeline{
             }
         }
         stage("push"){
-            agent{
-                label "python"
-            }
+            // agent{
+            //     label "python"
+            // }
             steps{
                 echo "build your nice project!"
             }
