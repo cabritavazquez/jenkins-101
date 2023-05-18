@@ -47,9 +47,9 @@ pipeline{
             }
         }
         stage("executing node"){
-            // agent{
-            //     docker { image 'sebasnaa/azagent:1.0' }
-            // }
+            agent{
+                docker { image 'sebasnaa/nodeagent:1.2' }
+            }
             steps{
                 sh 'node hola-mundo.js'
             }
