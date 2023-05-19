@@ -1,14 +1,10 @@
-// Declarative Pipeline using groovy script
-
-// Defining 
-def gv
+// Declarative Pipeline
 
 pipeline{
     agent any
     environment{
         MY_VERSION_VAR = "1.0.0"
     }
-    // parameters could be used in external groovy script
     parameters {
         choice(name: 'VERSION', choices: ['1.1.0','1.2.0','1.3.0'],description: 'Version to deploy')
         booleanParam(name: 'isRelease', defaultValue: false, description: '')
@@ -18,16 +14,6 @@ pipeline{
             steps{
                 echo "init"
                 echo "version project: ${VERSION}"
-                script{
-                    gv = load "script.groovy"
-                }
-            }
-        }
-        stage("executing some Groovy script"){
-            steps{
-                script {
-                    gv.
-                }
             }
         }        
         stage("build dev"){
@@ -81,14 +67,14 @@ pipeline{
             }
             steps{
                 sh 'node -v'
-                sh 'node holamundo.js'
+                sh 'node ./../holamundo.js'
             }
         }        
     }
     post {
         success {
             sh 'python3 --version'
-            sh 'python3 helloworld.py'
+            sh 'python3 ./../helloworld.py'
         }
     }
 }
