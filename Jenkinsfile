@@ -44,6 +44,11 @@ pipeline{
             }
         }
         stage("push"){
+            when {
+                expression {
+                    params.isRelease
+                }
+            }
             steps{
                 echo "build your nice project!"
             }
